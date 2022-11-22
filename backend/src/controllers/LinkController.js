@@ -31,11 +31,24 @@ module.exports = {
         const{ user_id} = req.body;
 
         const [, data] = await connection.query(`
-            SELECT * FROM users WHERE username='${user_id}'
+            SELECT * FROM urls WHERE user_id= '${user_id}'
         `)
 
         console.log(data)
 
-        return res.json(response)
+        return res.json(data)
+    },
+    async updateLink(req, res){
+        const response = {...responseModel}
+
+        const{ user_id} = req.body;
+
+        const [, data] = await connection.query(`
+            UPDATE url set link = '${link}' WHERE user_id = '${user_id}' 
+        `)
+
+        console.log(data)
+
+        return res.json(data)
     }
 }

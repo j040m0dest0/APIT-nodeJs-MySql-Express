@@ -2,8 +2,8 @@ const router = require('express').Router()
 
 //import controller
 const UserController = require('./controllers/UserController')
-
 const LinkController = require('./controllers/LinkController')
+const CategoriaController = require('./controllers/CategoriaController')
 
 
 
@@ -16,5 +16,9 @@ router.post('/create', UserController.create)
 //Url Controller
 router.post('/getLink', LinkController.getLink)
 router.post('/createLink', LinkController.createLink)
+
+//Categoria Controller
+router.post('/getCategoria', CategoriaController.getCategoria)
+router.post('/createCategoria', CategoriaController.createCategoria)
 
 module.exports = router
